@@ -1,0 +1,40 @@
+name: Unzip and Deploy
+
+on:
+  push:
+    branches:
+      - main  # Oder den Branch, den du verwendest
+    paths:
+      - 'hackerspace-status.zip'  # Nur auslösen, wenn die ZIP-Datei hochgeladen wird
+
+jobs:
+  unzip-and-deploy:
+    runs-on: ubuntu-latest  # Benutze eine Ubuntu-VM
+
+    steps:
+    # Checkout Repository
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    # Unzip the uploaded ZIP file
+    - name: Unzip the project files
+      run: |
+        unzip hackerspace-status.zip -d ./  # Entpacke die ZIP-Datei
+
+    # Set up Node.js environment
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'  # Oder jede andere Version, die du benötigst
+
+    # Install dependencies
+    - name: Install dependencies
+      run: |
+        cd hackerspace-status  # Falls du in ein Unterverzeichnis musst
+        npm install
+
+    # Build & Start the Node.js server
+    - name: Run the server
+      run: |
+        cd hackerspace-status
+        npm start
