@@ -3,7 +3,7 @@ const fs = require('fs');
 const basicAuth = require('express-basic-auth');
 
 const app = express();
-const PORT = 3000;
+const PORT = 10000;
 
 // Basic Auth für Admin-Bereich
 app.use('/admin', basicAuth({
