@@ -2,10 +2,10 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>Hackerspace Status</title>
+  <title>Biergarten Schönbusch Status</title>
 </head>
 <body>
-  <h1>Hackerspace Status</h1>
+  <h1>Biergarten Schönbusch Status</h1>
   <div id="status">Lade Status...</div>
 
   <script>
@@ -13,7 +13,7 @@
       .then(res => res.json())
       .then(data => {
         document.getElementById('status').innerText =
-          data.open ? '🟢 Der Space ist offen!' : '🔴 Der Space ist geschlossen.';
+          data.open ? '🟢 Der Biergarten ist heute offen!' : '🔴 Der Biergarten ist heute leider geschlossen.';
       });
   </script>
 </body>
