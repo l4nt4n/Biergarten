@@ -1,6 +1,6 @@
-# Hackerspace Status-Anzeige
+# Biergarten Status-Anzeige
 
-Zeigt öffentlich, ob euer Hackerspace geöffnet oder geschlossen ist – mit Web-Interface und JSON-API.
+Zeigt öffentlich, ob der Biergarten geöffnet oder geschlossen ist – mit Web-Interface und JSON-API.
 
 ## Starten
 
