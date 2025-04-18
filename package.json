@@ -1,7 +1,7 @@
 {
-  "name": "hackerspace-status",
+  "name": "Biergarten-status",
   "version": "1.0.0",
-  "description": "Kleine API + Website für Hackerspace Öffnungsstatus",
+  "description": "Kleine API + Website für Biergarten Öffnungsstatus",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
