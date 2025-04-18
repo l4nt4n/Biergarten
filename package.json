@@ -1,0 +1,13 @@
+{
+  "name": "hackerspace-status",
+  "version": "1.0.0",
+  "description": "Kleine API + Website für Hackerspace Öffnungsstatus",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.0",
+    "express-basic-auth": "^1.2.0"
+  }
+}

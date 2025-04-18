@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin: Hackerspace Status</title>
+  <style>
+    body { font-family: sans-serif; padding: 2rem; }
+    button { margin: 1rem; padding: 1rem 2rem; font-size: 1.2rem; }
+  </style>
+</head>
+<body>
+  <h1>Status ändern</h1>
+  <p id="current-status">Lade...</p>
+
+  <button onclick="setStatus('open')">🟢 Öffnen</button>
+  <button onclick="setStatus('closed')">🔴 Schließen</button>
+
+  <script>
+    function loadStatus() {
+      fetch('/api/status')
+        .then(res => res.json())
+        .then(data => {
+          document.getElementById('current-status').innerText =
+            "Status: " + (data.open ? '🟢 Offen' : '🔴 Geschlossen');
+        });
+    }
+
+    function setStatus(state) {
+      fetch('/api/set/' + state)
+        .then(res => res.text())
+        .then(msg => {
+          alert(msg);
+          loadStatus();
+        });
+    }
+
+    loadStatus();
+  </script>
+</body>
+</html>
